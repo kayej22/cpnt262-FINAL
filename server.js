@@ -13,3 +13,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // routes/index.js middleware
 app.use('/', index)
+
+//port set via .env file or default 3000
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => console.log(`listening on port ${port}...`));
