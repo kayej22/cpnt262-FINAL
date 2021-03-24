@@ -4,6 +4,7 @@ const mongoose = require('./connection');
 const express = ('express');
 const path = require('path');
 require('dotenv').config();
+const index = require('./routes');
 
 const app = express();
 app.set('view engine', 'ejs');
