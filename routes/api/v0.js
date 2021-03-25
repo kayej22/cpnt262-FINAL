@@ -36,24 +36,24 @@ router.get('/images/id', async (req, res, next) => {
 //team members JSON
 router.get('/members', (req, res) => {
 
-  Member.find({}, (err, images) => {
+  Member.find({}, (err, members) => {
     if (err) {
       res.status(404)
     
     }
-    res.json(images)
+    res.json(members)
   })
 });
 
 //subscribers JSON
 router.get('/subscribers', (req, res) => {
 
-  Subscriber.find({}, (err, images) => {
+  Subscriber.find({}, (err, subs) => {
     if (err) {
       res.status(404)
     
     }
-    res.json(images)
+    res.json(subs)
   })
 });
 
