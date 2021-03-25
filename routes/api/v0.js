@@ -20,19 +20,6 @@ router.get('/gallery', (req, res) => {
   })
 })
 
-//single image JSON
-
-router.get('/gallery/:id', async (req, res, next) => {
-  try {
-    const image = await Gallerie.find({});
-    if (image) return res.json(image);
-    return next(new Error('failed to convert database objects into json'));
-  } catch (err) {
-    return next(err);
-  }
-});
-
-
 //team members JSON
 router.get('/members', (req, res) => {
 
