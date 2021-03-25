@@ -1,58 +1,60 @@
 const express = require('express');
-/// Model requires go here ////
+const Gallerie = require('../../models/gallery.js')
+const Member = require('../../models/member.js')
+const Subscriber = require('../../models/subscriber.js')
+
 
 const router = express.Router();
 
-const Gallerie = require('../../models/gallery')
-const Member = require('../../models/member')
-const Subscriber = require('../../models/subscriber')
 
 
 //gallery JSON
 router.get('/gallery', (req, res) => {
-
-  //find() method after models have been built ///
-
-  // Image.find({}, (err, images) => {
-  //   if (err) {
-  //     res.status(404)
+  Gallerie.find({}, (err, images) => {
+    if (err) {
+      res.status(404)
     
-  //   }
-  //   res.json(images)
-  // })
+    }
+    res.json(images)
+  })
 })
 
 //single image JSON
 
 router.get('/images/id', async (req, res, next) => {
 
-  //find() method after models have been built ///
-
-  // try {
-  //   const gallery = await Image.find({});
-  //   if (gallery) return res.json(gallery);
-  //   return next(new Error('failed to convert database objects into json'));
-  // } catch (err) {
-  //   return next(err);
-  // }
+  try {
+    const gallery = await Gallerie.find({});
+    if (gallery) return res.json(gallery);
+    return next(new Error('failed to convert database objects into json'));
+  } catch (err) {
+    return next(err);
+  }
 });
 
 
 //team members JSON
-router.get('/gallery', (req, res) => {
-  
-  //find() method after models have been built ///
+router.get('/members', (req, res) => {
 
-  // Image.find({}, (err, images) => {
-  //   if (err) {
-  //     res.status(404)
+  Member.find({}, (err, images) => {
+    if (err) {
+      res.status(404)
     
-  //   }
-  //   res.json(images)
-  // })
-})
+    }
+    res.json(images)
+  })
+});
 
 //subscribers JSON
+router.get('/subscribers', (req, res) => {
 
+  Subscriber.find({}, (err, images) => {
+    if (err) {
+      res.status(404)
+    
+    }
+    res.json(images)
+  })
+});
 
 module.exports = router

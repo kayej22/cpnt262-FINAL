@@ -1,7 +1,7 @@
 // dependencies
 const mongoose = require('./connection');
 
-const express = ('express');
+const express = require('express')
 const path = require('path');
 require('dotenv').config();
 const index = require('./routes');
