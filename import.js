@@ -11,13 +11,10 @@ const Subscriber = require(`./models/Subscriber`);
 
 Gallery.insertMany(galSeed, function(error, animal) {
   console.log('Data import completed.')
-  mongoose.connection.close();
 });
 Member.insertMany(memSeed, function(error, animal) {
   console.log('Data import completed.')
-  mongoose.connection.close();
 });
 Subscriber.insertMany(subSeed, function(error, animal) {
   console.log('Data import completed.')
-  mongoose.connection.close();
 });
