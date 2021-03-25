@@ -1,7 +1,7 @@
 const team = [
   {
     name: 'Aidan',
-    profilePic: '',
+    profilePic: 'images/aidan.jpg',
     title: '',
     bio: 'Web Development student at SAIT ',
     github: 'https://github.com/Aidano93'
