@@ -1,4 +1,4 @@
-const gallery = [
+module.exports = [
   {
     id: 1,
     title: '',
@@ -71,6 +71,4 @@ const gallery = [
     width: 600,
     height: 400,
   },
-];
-
-module.exports = gallery;
+]
