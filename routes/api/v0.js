@@ -1,4 +1,5 @@
 const express = require('express');
+const Image = require('../../../../cpnt262-a5/models/image.js');
 const Gallerie = require('../../models/gallery.js')
 const Member = require('../../models/member.js')
 const Subscriber = require('../../models/subscriber.js')
@@ -21,11 +22,10 @@ router.get('/gallery', (req, res) => {
 
 //single image JSON
 
-router.get('/images/id', async (req, res, next) => {
-
+router.get('/gallery/:id', async (req, res, next) => {
   try {
-    const gallery = await Gallerie.find({});
-    if (gallery) return res.json(gallery);
+    const image = await Gallerie.find({});
+    if (image) return res.json(image);
     return next(new Error('failed to convert database objects into json'));
   } catch (err) {
     return next(err);
