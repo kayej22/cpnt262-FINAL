@@ -3,6 +3,9 @@ const express = require('express');
 
 const router = express.Router();
 
+const Gallerie = require('../../models/gallery')
+const Member = require('../../models/member')
+const Subscriber = require('../../models/subscriber')
 
 
 //gallery JSON
