@@ -1,12 +1,10 @@
 const express = require('express');
-const Image = require('../../../../cpnt262-a5/models/image.js');
 const Gallerie = require('../../models/gallery.js')
 const Member = require('../../models/member.js')
 const Subscriber = require('../../models/subscriber.js')
 
 
 const router = express.Router();
-
 
 
 //gallery JSON
