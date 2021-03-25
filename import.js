@@ -1,15 +1,23 @@
-const mongoose = require('./_connection.js') 
+const mongoose = require('./connection.js') 
 
 // Import seed data
-const dbSeed = require(`./seeds/gallery`);
-const dbSeed = require(`./seeds/member`);
-const dbSeed = require(`./seeds/subscriber`);
+const galSeed = require(`./seeds/gallery`);
+const memSeed = require(`./seeds/member`);
+const subSeed = require(`./seeds/subscriber`);
 // Define model
-const Animal = require(`./models/Gallerie`);
-const Animal = require(`./models/Member`);
-const Animal = require(`./models/Subscriber`);
+const Gallery = require(`./models/Gallery`);
+const Member = require(`./models/Member`);
+const Subscriber = require(`./models/Subscriber`);
 
-Animal.insertMany(dbSeed, function(error, animal) {
+Gallery.insertMany(galSeed, function(error, animal) {
+  console.log('Data import completed.')
+  mongoose.connection.close();
+});
+Member.insertMany(memSeed, function(error, animal) {
+  console.log('Data import completed.')
+  mongoose.connection.close();
+});
+Subscriber.insertMany(subSeed, function(error, animal) {
   console.log('Data import completed.')
   mongoose.connection.close();
 });
