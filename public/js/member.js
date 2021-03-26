@@ -1,6 +1,6 @@
 'use strict'
 
-fetch('api/v0/team')
+fetch('api/v0/members')
 .then((res) => {
   if (!res.ok) throw new Error('Not OK!')
 
@@ -9,11 +9,8 @@ fetch('api/v0/team')
 .then((members) => {
   
   const section = document.querySelector('section');
-  //append is used to nest elements into other elements. Eg: section.appendChild(figure), the figure element will become nested into the section element. HTML terms:
-//<section>
-//  <figure></figure>
-//</section>
-members.forEach((member) => {
+
+  members.forEach((member) => {
   //Creating a set of figure elements for each object inside array list.
     const figure = document.createElement('figure');
     section.appendChild(figure);
