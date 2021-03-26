@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@700&display=swap');
+
+$bold-font: 'Roboto Condensed',
+sans-serif;
+$normal-font: 'Cabin',
+sans-serif;
+$light-colour: #FFF;
+$dark-colour: #000;
+
+
+* {
+  font-family: $normal-font;
+}
+
+.night-mode * {
+  background-color: $dark-colour;
+  color: $light-colour;
+}
+
+.nav-wrapper [type=checkbox] {
+  display: none;
+}
+
+#hamburger {
+  position: relative;
+
+  z-index: -1;
+}
+
+label {
+  display: none;
+}
+
+nav {
+  ul {
+    display: grid;
+
+    grid-template-columns: repeat(5, auto);
+
+    padding: 0.5rem;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    border-bottom: 2px solid $dark-colour;
+  }
+
+  .grimes {
+    justify-self: start;
+  }
+
+  li {
+    justify-self: end;
+  }
+
+  a {
+    padding: 0.5rem;
+
+    text-decoration: none;
+
+    color: $dark-colour;
+
+    &:hover {
+      background-color: rgb(153, 128, 102);
+    }
+  }
+}
+
+.hero {
+  display: grid;
+
+  text-align: center;
+
+  margin: auto;
+
+  padding: 0.5rem;
+
+  min-height: 50vh;
+
+  align-items: center;
+
+  h1 {
+    margin: 0;
+
+    padding: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+footer {
+  text-align: center;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  border-top: 2px solid $dark-colour;
+
+  p {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 42.7rem) {
+
+  .nav-wrapper [type=checkbox] {
+    display: none;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  #toggle:checked~*~.nav-menu {
+    display: block;
+  }
+
+  #hamburger {
+    z-index: 1;
+
+    padding-right: 0.7rem;
+    padding-top: 0.5rem;
+
+    cursor: pointer;
+  }
+
+  label {
+    position: absolute;
+
+    display: inline-block;
+
+    right: 0;
+  }
+
+  nav {
+    ul {
+      display: block;
+
+      text-align: center;
+
+      padding: 1rem;
+    }
+
+    li {
+      padding: 0.5rem;
+    }
+  }
+}
