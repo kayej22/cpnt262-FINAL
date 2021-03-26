@@ -1,6 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const api = require('./api/v0')
+const config = require('../config')
+
+// global ejs variabls
+router.use((req, res, next) => {
+  res.locals = config
+  next()
+})
 
 // Home
 router.get('/', (req, res) => {
@@ -14,7 +21,7 @@ router.get('/subscribe', (req, res) => {
 
 // Team
 router.get('/team', (req, res) => {
-  res.render('pages/team', {pageTitle: 'Team'})
+  res.render('pages/member', {pageTitle: 'Team'})
 })
 
 // Admin
