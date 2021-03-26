@@ -21,9 +21,9 @@ fetch('api/v0/members')
     figure.appendChild(name);
 
   //Creating h3 element to nest into the figures, this is the title.
-  const title = document.createElement('h3');
-  title.innerHTML = member.title;
-  figure.appendChild(title);
+    const title = document.createElement('h3');
+    title.innerHTML = member.title;
+    figure.appendChild(title);
 
   // Creating anchor element on image
     const github = document.createElement('a');
