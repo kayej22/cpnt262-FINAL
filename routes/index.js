@@ -14,7 +14,7 @@ router.get('/subscribe', (req, res) => {
 
 // Team
 router.get('/team', (req, res) => {
-  res.render('pages/team', {pageTitle: 'Team'})
+  res.render('pages/member', {pageTitle: 'Team'})
 })
 
 // Admin
