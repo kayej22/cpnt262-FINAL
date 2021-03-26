@@ -1,6 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const api = require('./api/v0')
+const config = require('../config')
+
+// global ejs variabls
+router.use((req, res, next) => {
+  res.locals = config
+  next()
+})
 
 // Home
 router.get('/', (req, res) => {
